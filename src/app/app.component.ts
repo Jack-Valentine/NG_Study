@@ -5,11 +5,16 @@ import { Component } from '@angular/core';
   template: `
     <h1>Inline Template</h1>
     <!-- <fa-databinding></fa-databinding> -->
-    <fa-lifecycle *ngIf="!delete"></fa-lifecycle>
-    <button (click)="delete = true">CLick to Delete</button>
+    <fa-lifecycle *ngIf="!delete" [bindable]="boundValue" ></fa-lifecycle>
+    <p>{{test}}</p>
+    <button (click)="delete = true">Click to Delete</button>
+    <button (click)="test = 'Changed Value'">Click to Change Content</button>
+    <button (click)="boundValue = 2000">Click to Change Binding</button>
   `
 })
 export class AppComponent {
   title = 'I changed it!';
   delete = false;
+  test = 'Starting Value'
+  boundValue = 1000;
 }
