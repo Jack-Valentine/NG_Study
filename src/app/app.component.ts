@@ -5,8 +5,9 @@ import { Component } from '@angular/core';
   template: `
     <h1>Inline Template</h1>
     <!-- <fa-databinding></fa-databinding> -->
-    <fa-lifecycle *ngIf="!delete" [bindable]="boundValue" ></fa-lifecycle>
-    <p>{{test}}</p>
+    <fa-lifecycle *ngIf="!delete" [bindable]="boundValue" >
+        <p #boundContent>{{test}}</p>
+    </fa-lifecycle>
     <button (click)="delete = true">Click to Delete</button>
     <button (click)="test = 'Changed Value'">Click to Change Content</button>
     <button (click)="boundValue = 2000">Click to Change Binding</button>
