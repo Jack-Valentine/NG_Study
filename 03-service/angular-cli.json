@@ -1,7 +1,7 @@
 {
   "project": {
-    "version": "1.0.0-beta.19-3",
-    "name": "complete-guide"
+    "version": "1.0.0-beta.26",
+    "name": "service"
   },
   "apps": [
     {
@@ -28,8 +28,6 @@
       }
     }
   ],
-  "addons": [],
-  "packages": [],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
