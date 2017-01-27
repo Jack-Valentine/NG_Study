@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogService } from  './log.service';
 
 @Component({
     selector: 'si-cmp-a',
@@ -24,6 +25,8 @@ import { Component } from '@angular/core';
 export class CmpAComponent {
     value = '';
     items: string[] = [];
+
+    constructor (private logService: LogService) {}
 
     onLog(value: string) {
 
