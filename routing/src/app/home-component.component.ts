@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home-component',
+  selector: 'home-component',
   template: `
     <h1>
       Home Component!
@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   `,
   styles: []
 })
-export class HomeComponentComponent {
+export class HomeComponent {
   constructor() { }
 
 }
