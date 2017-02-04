@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-user',
   template: `
       <h1>User Component</h1>
+      <a [routerLink]="['user']">User</a>
     `
 })
 export class UserComponent implements OnInit {
