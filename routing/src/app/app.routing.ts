@@ -8,7 +8,7 @@ import { UserComponent } from './user/user.component';
 import {ModuleWithProviders} from "@angular/core";
 
 const APP_ROUTES: Routes = [
-    { path: 'user', component: UserComponent },
+    { path: 'user/:id', component: UserComponent },
     { path: '', component: HomeComponent }
 ];
 
