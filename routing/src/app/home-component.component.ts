@@ -19,7 +19,7 @@ export class HomeComponent implements OnDestroy{
   param: string;
 
   constructor(private route: ActivatedRoute) {
-    this.subscription = route.queryParams.subscribe(
+    this.subscription = this.route.queryParams.subscribe(
         (queryParam: any) => this.param = queryParam['analytics']
     );
   }
