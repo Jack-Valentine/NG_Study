@@ -8,8 +8,10 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home-component.component';
 import { UserDetailComponent } from './user/user-detail.component';
 import { UserEditComponent } from './user/user-edit.component';
+import { UserDetailGuard } from "./user/user-detail.guaard";
 import {RouterModule} from "@angular/router";
 import {routing} from "./app.routing";
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {routing} from "./app.routing";
     UserComponent,
     HomeComponent,
     UserDetailComponent,
-    UserEditComponent
+    UserEditComponent,
+    UserDetailGuard
   ],
   imports: [
     BrowserModule,
