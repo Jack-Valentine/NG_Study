@@ -9,8 +9,9 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home-component.component';
 import { UserDetailComponent } from './user/user-detail.component';
 import { UserEditComponent } from './user/user-edit.component';
-import {RouterModule} from "@angular/router";
-import {routing} from "./app.routing";
+import { RouterModule } from "@angular/router";
+import { routing } from "./app.routing";
+import { UserEditGuard } from "./user/user-edit.guard";
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import {routing} from "./app.routing";
     RouterModule,
     routing
   ],
-  providers: [UserDetailGuard],
+  providers: [UserDetailGuard, UserEditGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
