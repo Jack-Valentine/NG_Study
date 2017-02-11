@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { UserDetailGuard } from "./user/user-detail.guaard";
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home-component.component';
 import { UserDetailComponent } from './user/user-detail.component';
 import { UserEditComponent } from './user/user-edit.component';
-import { UserDetailGuard } from "./user/user-detail.guaard";
 import {RouterModule} from "@angular/router";
 import {routing} from "./app.routing";
 
@@ -19,8 +19,7 @@ import {routing} from "./app.routing";
     UserComponent,
     HomeComponent,
     UserDetailComponent,
-    UserEditComponent,
-    UserDetailGuard
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +28,7 @@ import {routing} from "./app.routing";
     RouterModule,
     routing
   ],
-  providers: [],
+  providers: [UserDetailGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
