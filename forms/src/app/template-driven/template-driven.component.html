@@ -1,6 +1,6 @@
 <h1>Template Driven</h1>
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-  <div>
+  <div ngModelGroup="userData">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text"
@@ -30,8 +30,13 @@
            name="password"
            required>
   </div>
-  <div class="radio">
+  <div class="radio" *ngFor="let g of genders">
     <label>
+        <input type="radio"
+               name="gender"
+               [(ngModel)]="user.gender"
+               [value]="g">
+        {{g}}
     </label>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

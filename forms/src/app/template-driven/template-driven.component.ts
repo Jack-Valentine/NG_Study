@@ -10,10 +10,15 @@ export class TemplateDrivenComponent {
   user = {
     username: 'JackValentine',
     email: 'jackvalentine@jackarchiv.com',
-    password: 'test'
+    password: 'test',
+    gender: 'male'
   };
+  genders = [
+    'male',
+    'female'
+  ]
 
   onSubmit(form: NgForm) {
-    console.log(this.user);
+    console.log(form.value);
   }
 }
