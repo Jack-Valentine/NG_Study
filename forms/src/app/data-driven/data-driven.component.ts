@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup, FormControl, Validators, FormArray, FormBuilder} from "@angular/forms";
+import {Observable} from "rxjs";
 
 @Component({
     selector: 'data-driven',
@@ -28,7 +29,7 @@ export class DataDrivenComponent {
         });*/
         this.myForm = formBuilder.group({
             'userData': formBuilder.group({
-                'username': ['Max', Validators.required],
+                'username': ['Max', [Validators.required, this.exampleValidator]],
                 'email': ['', [
                     Validators.required,
                     Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
@@ -37,7 +38,7 @@ export class DataDrivenComponent {
             'password': ['', Validators.required],
             'gender': ['male'],
             'hobbies': formBuilder.array([
-                ['Cooking', Validators.required]
+                ['Cooking', Validators.required, this.asyncExampleValidator]
             ])
         })
     }
@@ -45,6 +46,27 @@ export class DataDrivenComponent {
         console.log(this.myForm);
     }
     onAddHobby() {
-        (<FormArray>this.myForm.get('hobbies')).push(new FormControl('', Validators.required))
+        (<FormArray>this.myForm.get('hobbies')).push(new FormControl('', Validators.required, this.asyncExampleValidator))
+    }
+    exampleValidator(control: FormControl): {[s: string]: boolean} {
+        if (control.value === 'Example') {
+            return {example: true};
+        }
+        return null;
+    }
+
+    asyncExampleValidator(control: FormControl): Promise<any> | Observable<any> {
+        const promise = new Promise<any>(
+          (resolve, reject) => {
+              setTimeout(() => {
+                  if (control.value === 'Example') {
+                      resolve({'invalid': true});
+                  } else {
+                      resolve(null);
+                  }
+              }, 1500)
+          }
+        );
+        return promise;
     }
 }
