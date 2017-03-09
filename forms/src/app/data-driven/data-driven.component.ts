@@ -40,7 +40,13 @@ export class DataDrivenComponent {
             'hobbies': formBuilder.array([
                 ['Cooking', Validators.required, this.asyncExampleValidator]
             ])
-        })
+        });
+        this.myForm.valueChanges.subscribe(
+          (data: any) => console.log(data)
+        );
+        this.myForm.statusChanges.subscribe(
+          (data: any) => console.log(data)
+        );
     }
     onSubmit() {
         console.log(this.myForm);
@@ -68,5 +74,9 @@ export class DataDrivenComponent {
           }
         );
         return promise;
+    }
+
+    reset() {
+        this.myForm.reset();
     }
 }
