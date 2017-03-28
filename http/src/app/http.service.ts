@@ -6,12 +6,12 @@ import 'rxjs/RX';
 @Injectable()
 export class HttpService {
   // private firebase url
-  private json_url:string = '';
-  private set_url:string = '';
+  private json_url:string = 'https://angular2-http-f649b.firebaseio.com/title.json';
+  private set_url:string = 'https://angular2-http-f649b.firebaseio.com/data.json';
 
   constructor(private http: Http) { }
 
-  getDate() {
+  getData() {
     return this.http.get(this.json_url).map((response: Response) => response.json());
   }
 

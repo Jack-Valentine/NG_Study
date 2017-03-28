@@ -8,11 +8,12 @@ import {Response} from "@angular/http";
 })
 export class AppComponent {
   items: any[] = [];
+  asyncString = this.httpService.getData();
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-    this.httpService.getDate()
+    this.httpService.getData()
       .subscribe(
         (data: any) => console.log(data)
       );
@@ -32,7 +33,6 @@ export class AppComponent {
           tmpArray.push(data[key]);
         }
         this.items = tmpArray;
-        console.log(this.items);
       }
     );
   }
