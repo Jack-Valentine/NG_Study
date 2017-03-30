@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Http, Response, Headers} from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 
-import 'rxjs/RX';
-import {Observable} from "rxjs";
+import { Observable } from "rxjs/rx";
 
 @Injectable()
 export class HttpService {
   // private firebase url
-  private json_url:string = '';
-  private set_url:string = '';
+  private json_url:string = 'https://firebaseio.com/title.json';
+  private set_url:string = 'https://firebaseio.com/data.json';
 
   private handleError(error: any) {
     console.log(error);
