@@ -2,12 +2,18 @@ import { Injectable } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 
 import 'rxjs/RX';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class HttpService {
   // private firebase url
   private json_url:string = '';
   private set_url:string = '';
+
+  private handleError(error: any) {
+    console.log(error);
+    return Observable.throw(error);
+  }
 
   constructor(private http: Http) { }
 
@@ -19,7 +25,9 @@ export class HttpService {
     const body = JSON.stringify(user);
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post(this.set_url, body, {headers: headers}).map((data: Response) => data.json());
+    return this.http.post(this.set_url, body, {headers: headers})
+      .map((data: Response) => data.json())
+      .catch(this.handleError);
   }
 
   getOwnData() {
