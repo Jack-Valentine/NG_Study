@@ -6,8 +6,8 @@ import { Observable } from "rxjs/rx";
 @Injectable()
 export class HttpService {
   // private firebase url
-  private json_url:string = 'https://firebaseio.com/title.json';
-  private set_url:string = 'https://firebaseio.com/data.json';
+  private json_url:string = 'https://angular2-http-f649b.firebaseio.com/title.json';
+  private set_url:string = 'https://angular2-http-f649b.firebaseio.com/data.json';
 
   private handleError(error: any) {
     console.log(error);
