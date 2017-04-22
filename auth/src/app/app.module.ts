@@ -9,7 +9,7 @@ import { HeaderComponent } from './shared/header.component';
 import { SigninComponent } from './unprotected/signin.component';
 import { SignupComponent } from './unprotected/signup.component';
 import { ProtectedComponent } from './protected/protected.component';
-import {APP_ROUTES} from "./app.routes";
+import {routing} from "./app.routes";
 
 @NgModule({
   declarations: [
@@ -17,14 +17,14 @@ import {APP_ROUTES} from "./app.routes";
     HeaderComponent,
     SigninComponent,
     SignupComponent,
-    ProtectedComponent
+    ProtectedComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    APP_ROUTES
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

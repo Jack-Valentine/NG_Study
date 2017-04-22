@@ -10,9 +10,9 @@ import { Component } from "@angular/core";
         
                     <ul class="nav navbar-nav">
         
-                        <li><a>Sign Up</a></li>
-                        <li><a>Sign In</a></li>
-                        <li><a>Protected</a></li>
+                        <li><a [routerLink]="['signup']">Sign Up</a></li>
+                        <li><a [routerLink]="['signin']">Sign In</a></li>
+                        <li><a [routerLink]="['protected']">Protected</a></li>
         
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
