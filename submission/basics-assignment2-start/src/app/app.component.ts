@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  username: string = 'test';
+  username: string = '';
 
-  onUpdateServerName(event: any) {
-    this.username = (<HTMLInputElement>event.target).value;
+  onReset(event: any) {
+    this.username = '';
   }
 }
