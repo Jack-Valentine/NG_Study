@@ -10,13 +10,13 @@ export class AppComponent {
   clickLogger = [];
   logDisplayed: string = '';
 
-  onDisplay() {
+  /*onDisplay() {
     this.clickLogger.push('Click time : ' + Date.now());
     this.passwordDisplayed = !this.passwordDisplayed;
     console.log(this.clickLogger);
-  }
+  }*/
 
-  odDisplayLog() {
+  onToggleDisplay() {
 
   }
 }

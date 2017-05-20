@@ -9,8 +9,11 @@
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
       <hr>
-      <button class="btn btn-primary" (click)="onDisplay()">Display Details</button>
-      <p *ngIf="passwordDisplayed">Secret Password = tuna</p>
+      <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button>
+      <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+      <p *ngIf="showSecret">Secret Password = tuna</p>
+      <!--<button class="btn btn-primary" (click)="onDisplay()">Display Details</button>
+      <p *ngIf="passwordDisplayed">Secret Password = tuna</p>-->
       <!--<p *ngFor="let log of clickLogger"></p>-->
     </div>
   </div>
