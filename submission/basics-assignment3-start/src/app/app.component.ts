@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  passwordDisplayed: boolean = false;
+  /*passwordDisplayed: boolean = false;
   clickLogger = [];
-  logDisplayed: string = '';
+  logDisplayed: string = '';*/
+  showSecret: boolean = false;
+  log = [];
 
   /*onDisplay() {
     this.clickLogger.push('Click time : ' + Date.now());
@@ -16,7 +18,8 @@ export class AppComponent {
     console.log(this.clickLogger);
   }*/
 
-  onToggleDisplay() {
-
+  onToggleDetails() {
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
   }
 }
