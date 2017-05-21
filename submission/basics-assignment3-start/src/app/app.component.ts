@@ -8,18 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   /*passwordDisplayed: boolean = false;
   clickLogger = [];
-  logDisplayed: string = '';*/
+  logDisplayed: string = '';
+  onDisplay() {
+   this.clickLogger.push('Click time : ' + Date.now());
+   this.passwordDisplayed = !this.passwordDisplayed;
+   console.log(this.clickLogger);
+   }*/
   showSecret: boolean = false;
   log = [];
 
-  /*onDisplay() {
-    this.clickLogger.push('Click time : ' + Date.now());
-    this.passwordDisplayed = !this.passwordDisplayed;
-    console.log(this.clickLogger);
-  }*/
-
   onToggleDetails() {
     this.showSecret = !this.showSecret;
-    this.log.push(this.log.length + 1);
+    this.log.push(new Date());
   }
 }
