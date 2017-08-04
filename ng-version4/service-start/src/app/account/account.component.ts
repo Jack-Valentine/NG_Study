@@ -5,8 +5,8 @@ import { AccountService } from '../account.service';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css'],
-  providers: [LoggingService, AccountService]
+  styleUrls: ['./account.component.css']
+  // providers: [LoggingService, AccountService]
 })
 export class AccountComponent implements OnInit {
   @Input() account: {name: string, status: string};
@@ -24,6 +24,6 @@ export class AccountComponent implements OnInit {
   onSetTo(status: string) {
     // this.statusChanged.emit({id: this.id, newStatus: status});
     this.accountService.updateStatus(this.id, status);
-    this.loggingService.logStatusChange(status);
+    // this.loggingService.logStatusChange(status);
   }
 }
